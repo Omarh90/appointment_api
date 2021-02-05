@@ -43,9 +43,6 @@ def ziptolocation(zip_code, file=mappingfilename, reverse = False):
 def revgeocode(lat, long, apikey):
     
     # Use google map API to get zipcode based on lat/long
-
-    apikey = input()
-    
     api = r"https://maps.googleapis.com/maps/api/geocode/json?"
     params = {'latlng': str(lat) + ','+ str(long),
               'key':apikey}
