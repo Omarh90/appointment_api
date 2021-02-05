@@ -4,11 +4,6 @@ from appointment_api import *
 
 class TestMainCode:
 
-    #def __init__(self, _input= (38.614407, -92.276468), expected= None):
-    #
-    #    self.input = _input
-    #    self.expected = expected
-
     def test_mainnoerrors(self, input_=(38.614407, -92.276468)):
 
         smoketest=False
@@ -72,17 +67,4 @@ class TestNextAppt:
         # If expected value is not provided, use upperbound test.
         assert all(self.expected_upperbound > appt_time for appt_time in self.actual.values()) and\
                (self.expected == self.actual or not self.expected)
-                   
-"""
-    # Slightly-informally cramming tests into same module as code
-    test_revgeocode = TestRevGeoCode()
-    test_nextappt = TestNextAppt()
-    test_main = TestMainCode()
-
-    testresult = {'reverse geocode API unit test': test_revgeocode.test_revgeocode(),
-                   'next appointment unit test': test_nextappt.test_nextappt(),
-                   'smoke test': test_main.test_mainnoerrors(),
-                   'returns json test': test_main.test_mainreturnsjson()}
-    print("All {} tests passed! Including: {}".format(len(testresult), ", ".join(testresult.keys())))
-
-"""
+   
